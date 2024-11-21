@@ -1,0 +1,26 @@
+create database test;
+
+create table employee (
+ id integer not null,
+ name varchar(50) not null,
+ birthday date,
+ email varchar(100)
+);
+
+insert into employee (name, birthday, email)
+values (
+ 'aslıhan', '2001-01-01', 'aslihan@gmail.com',
+ 'Ahmet', '1998-01-01', 'ahmet@gmail.com',
+);
+
+
+update employee
+set name = 'nisa',
+    birthday = '1988-01-01',
+    email= 'nisa@gmail.com'
+where id = 2
+returning *;
+
+delete from employee
+where name = 'Ali'
+returning *;
